@@ -16,6 +16,9 @@ function getAppNames() {
     .map(f => f.replace('.apk', ''));
 }
 
+// Files to exclude from documentation
+const EXCLUDED_FILES = ['changelog.md', 'CHANGELOG.md'];
+
 // Get all markdown files in a directory
 function getMarkdownFiles(dir) {
   const files = [];
@@ -26,7 +29,7 @@ function getMarkdownFiles(dir) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
 
-    if (stat.isFile() && item.endsWith('.md')) {
+    if (stat.isFile() && item.endsWith('.md') && !EXCLUDED_FILES.includes(item)) {
       files.push({
         name: item,
         path: fullPath,
