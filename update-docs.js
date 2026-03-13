@@ -38,9 +38,20 @@ function getMarkdownFiles(dir) {
   return files.sort((a, b) => a.name.localeCompare(b.name));
 }
 
+// Configure marked to preserve mermaid code blocks
+const renderer = new marked.Renderer();
+const originalCodeRenderer = renderer.code.bind(renderer);
+
+renderer.code = function(code, language) {
+  if (language === 'mermaid') {
+    return `<pre class="mermaid">${code}</pre>`;
+  }
+  return originalCodeRenderer(code, language);
+};
+
 // Generate HTML for a single markdown file
 function renderMarkdownToHTML(content, title) {
-  const htmlContent = marked(content);
+  const htmlContent = marked(content, { renderer });
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -172,7 +183,18 @@ function renderMarkdownToHTML(content, title) {
             background: #f4f4f4;
             font-weight: 600;
         }
+        .content .mermaid {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            text-align: center;
+        }
     </style>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
 </head>
 <body>
     <div class="container">
