@@ -3,24 +3,14 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const CONFIG = {
-  ignoreDirs: ['.git', 'node_modules'],
+  ignoreDirs: ['.git', 'node_modules', 'docs'],
   fileTypes: {
-    'APK Files': ['.apk'],
     'Images': ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.ico'],
-    'Documents': ['.pdf', '.doc', '.docx', '.txt', '.md'],
-    'Videos': ['.mp4', '.webm', '.mov', '.avi'],
-    'Audio': ['.mp3', '.wav', '.ogg'],
-    'Archives': ['.zip', '.rar', '.tar', '.gz'],
-    'Other': []
+    'Videos': ['.mp4', '.webm', '.mov', '.avi']
   },
   icons: {
-    'APK Files': '📦',
     'Images': '🖼️',
-    'Documents': '📄',
-    'Videos': '🎬',
-    'Audio': '🎵',
-    'Archives': '📁',
-    'Other': '📄'
+    'Videos': '🎬'
   }
 };
 
@@ -91,7 +81,14 @@ function getRelativePath(filePath) {
 }
 
 function generateIndexHTML() {
-  const files = getAllFiles(process.cwd()).filter(f => !f.startsWith(path.join(process.cwd(), 'docs')));
+  const files = getAllFiles(process.cwd()).filter(f => {
+    const relativePath = path.relative(process.cwd(), f);
+    const parts = relativePath.split(path.sep);
+    const folder = parts[0];
+
+    // Only include files from images/ and videos/ folders
+    return ['images', 'videos'].includes(folder);
+  });
   const categorized = {};
 
   // Initialize categories
