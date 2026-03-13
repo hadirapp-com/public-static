@@ -1,0 +1,12 @@
+{
+  "name": "public-static-index",
+  "version": "1.0.0",
+  "description": "Auto-generate index.html from repository files",
+  "scripts": {
+    "update": "node update-index.js",
+    "update:watch": "nodemon --watch . --watch apk --watch images --ignore index.html --exec 'node update-index.js'"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
