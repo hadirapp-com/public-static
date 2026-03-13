@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blokf - USER_GUIDE_ADMIN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 2rem;
+        }
+        .content h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        .content h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .content h3 {
+            font-size: 1.25rem;
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .content p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .content ul, .content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        .content code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+        }
+        .content pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+        .content pre code {
+            background: transparent;
+            padding: 0;
+        }
+        .content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .content a:hover {
+            text-decoration: underline;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        .content blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        .content th, .content td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .content th {
+            background: #f4f4f4;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>blokf - USER_GUIDE_ADMIN</h1>
+        </header>
+        <div class="content">
+            <h1>PANDUAN PENGGUNAAN APLIKASI</h1>
+<h2>Sistem Pengamanan Lebaran Blok F RT 024</h2>
+<hr>
+<p><strong>Versi:</strong> 1.0
+<strong>Tanggal:</strong> Maret 2026
+<strong>Target Pengguna:</strong> Admin Sistem</p>
+<hr>
+<h2>📋 DAFTAR ISI</h2>
+<ol>
+<li><a href="#1-pengantar">Pengantar</a></li>
+<li><a href="#2-login-ke-dashboard">Login ke Dashboard</a></li>
+<li><a href="#3-dashboard">Dashboard</a></li>
+<li><a href="#4-manajemen-pengguna">Manajemen Pengguna</a></li>
+<li><a href="#5-manajemen-petugas-jaga">Manajemen Petugas Jaga</a></li>
+<li><a href="#6-manajemen-pos-jaga">Manajemen Pos Jaga</a></li>
+<li><a href="#7-manajemen-qr-code">Manajemen QR Code</a></li>
+<li><a href="#8-manajemen-pengumuman">Manajemen Pengumuman</a></li>
+<li><a href="#9-lihat-riwayat-scan">Lihat Riwayat Scan</a></li>
+<li><a href="#10-pengaturan-konfigurasi">Pengaturan Konfigurasi</a></li>
+<li><a href="#11-faq">FAQ</a></li>
+</ol>
+<hr>
+<h2>1. PENGANTAR</h2>
+<p>Selamat datang di Panduan Penggunaan Aplikasi Sistem Pengamanan Lebaran Blok F RT 024.</p>
+<p>Aplikasi ini dirancang untuk memudahkan pengelolaan keamanan Lebaran di lingkungan Blok F RT 024 dengan menggunakan sistem QR Code.</p>
+<h3>Fitur Utama:</h3>
+<p>✅ <strong>Manajemen QR Code</strong> - Buat QR code untuk setiap rumah/blok
+✅ <strong>Manajemen Petugas</strong> - Kelola data petugas jaga
+✅ <strong>Manajemen Pos</strong> - Kelola pos-pos jaga
+✅ <strong>Pengumuman</strong> - Buat dan kirim pengumuman ke petugas
+✅ <strong>Monitoring Real-time</strong> - Pantau scan masuk/keluar
+✅ <strong>Laporan</strong> - Export laporan dalam format Excel</p>
+<h3>Akses Aplikasi</h3>
+<p>🌐 <strong>URL Dashboard Admin:</strong>
+<a href="https://blokf.hadirapp.com">https://blokf.hadirapp.com</a></p>
+<hr>
+<h2>2. LOGIN KE DASHBOARD</h2>
+<h3>Langkah-langkah Login:</h3>
+<ol>
+<li><p>Buka browser dan kunjungi: <strong><a href="https://blokf.hadirapp.com">https://blokf.hadirapp.com</a></strong></p>
+</li>
+<li><p>Halaman login akan muncul</p>
+</li>
+<li><p>Masukkan kredensial:</p>
+<ul>
+<li><strong>Username:</strong> <code>superadmin</code> atau <code>admin</code></li>
+<li><strong>Password:</strong> <code>admin123</code></li>
+</ul>
+</li>
+<li><p>Klik tombol <strong>&quot;Login&quot;</strong></p>
+</li>
+<li><p>Setelah berhasil login, Anda akan diarahkan ke Dashboard</p>
+</li>
+</ol>
+<h3>Ganti Password (Disarankan)</h3>
+<p>Untuk keamanan, disarankan mengganti password setelah login pertama:</p>
+<ol>
+<li>Klik nama user di pojok kanan atas</li>
+<li>Pilih <strong>&quot;Logout&quot;</strong> (nanti akan ada fitur ganti password)</li>
+</ol>
+<hr>
+<h2>3. DASHBOARD</h2>
+<p>Dashboard adalah halaman utama yang menampilkan ringkasan aktivitas pengamanan.</p>
+<h3>Komponen Dashboard:</h3>
+<pre><code>┌────────────────────────────────────────────────────────┐
+│  DASHBOARD PENGAMANAN LEBARAN                          │
+├────────────────────────────────────────────────────────┤
+│                                                        │
+│  📊 STATISTIK HARI INI                                 │
+│  ┌─────────┬─────────┬─────────┬─────────┐             │
+│  │ Total   │ Masuk   │ Keluar  │ Unik    │             │
+│  │ Scan    │         │         │         │             │
+│  │ 150     │ 80      │ 70      │ 45      │             │
+│  └─────────┴─────────┴─────────┴─────────┘             │
+│                                                        │
+│  📈 AKTIVITAS SCAN TERBARU                             │
+│  ┌─────────────────────────────────────────┐           │
+│  │ 13 Maret 2026, 18:30                    │           │
+│  │ Block A-101 - Masuk                     │           │
+│  │ Petugas: Bpk. Ahmad - Pos 1 Utama       │           │
+│  └─────────────────────────────────────────┘           │
+│                                                        │
+└────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>Informasi yang Ditampilkan:</h3>
+<ol>
+<li><p><strong>Statistik Hari Ini</strong></p>
+<ul>
+<li>Total Scan: Jumlah semua scan hari ini</li>
+<li>Masuk: Jumlah scan masuk</li>
+<li>Keluar: Jumlah scan keluar</li>
+<li>Unik: Jumlah QR unik yang discan</li>
+</ul>
+</li>
+<li><p><strong>Aktivitas Scan Terbaru</strong></p>
+<ul>
+<li>10 scan terakhir secara real-time</li>
+<li>Menampilkan waktu, QR, petugas, dan pos</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2>4. MANAJEMEN PENGGUNA</h2>
+<p>Menu ini digunakan untuk mengelola akun admin yang memiliki akses ke dashboard.</p>
+<h3>Mengakses Menu Users:</h3>
+<ol>
+<li>Klik menu <strong>&quot;Users&quot;</strong> di sidebar kiri</li>
+<li>Daftar semua pengguna akan ditampilkan</li>
+</ol>
+<h3>Membuat User Baru:</h3>
+<ol>
+<li><p>Klik tombol <strong>&quot;+ Tambah User&quot;</strong> di pojok kanan atas</p>
+</li>
+<li><p>Isi form:</p>
+<pre><code>Username: admin2
+Password: password123
+Role: Admin
+</code></pre>
+</li>
+<li><p>Klik <strong>&quot;Simpan&quot;</strong></p>
+</li>
+</ol>
+<h3>Role Pengguna:</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Superadmin</strong></td>
+<td>Akses penuh termasuk manajemen user</td>
+</tr>
+<tr>
+<td><strong>Admin</strong></td>
+<td>Akses terbatas, tidak bisa manajemen user</td>
+</tr>
+</tbody></table>
+<h3>Mengedit User:</h3>
+<ol>
+<li>Klik tombol <strong>icon edit</strong> (✏️) pada baris user yang ingin diubah</li>
+<li>Ubah data yang diperlukan</li>
+<li>Klik <strong>&quot;Simpan&quot;</strong></li>
+</ol>
+<h3>Menghapus User:</h3>
+<ol>
+<li>Klik tombol <strong>icon hapus</strong> (🗑️)</li>
+<li>Konfirmasi penghapusan</li>
+</ol>
+<p>⚠️ <strong>Catatan:</strong> User yang dihapus akan dihapus secara <em>soft delete</em> (masih ada di database tapi tidak aktif)</p>
+<hr>
+<h2>5. MANAJEMEN PETUGAS JAGA</h2>
+<p>Menu ini untuk mengelola data petugas jaga yang akan bertugas.</p>
+<h3>Mengakses Menu Petugas:</h3>
+<ol>
+<li>Klik menu <strong>&quot;Petugas&quot;</strong> di sidebar kiri</li>
+</ol>
+<h3>Membuat Petugas Baru:</h3>
+<ol>
+<li><p>Klik tombol <strong>&quot;+ Tambah Petugas&quot;</strong></p>
+</li>
+<li><p>Isi form dengan lengkap:</p>
+<pre><code>Nama: Bpk. Ahmad Subarjo
+NIK: 1234567890123456
+No HP: 081234567890
+</code></pre>
+</li>
+<li><p>Klik <strong>&quot;Simpan&quot;</strong></p>
+</li>
+</ol>
+<h3>Data yang Diperlukan:</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Keterangan</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Nama</strong></td>
+<td>Nama lengkap petugas</td>
+<td>Teks</td>
+</tr>
+<tr>
+<td><strong>NIK</strong></td>
+<td>Nomor Induk Kependudukan</td>
+<td>16 digit angka</td>
+</tr>
+<tr>
+<td><strong>No HP</strong></td>
+<td>Nomor handphone</td>
+<td>10-15 digit angka</td>
+</tr>
+</tbody></table>
+<h3>Mengedit Petugas:</h3>
+<ol>
+<li>Klik icon edit (✏️) pada petugas yang dipilih</li>
+<li>Ubah data</li>
+<li>Klik <strong>&quot;Simpan&quot;</strong></li>
+</ol>
+<h3>Menghapus Petugas:</h3>
+<p>⚠️ <strong>Hati-hati:</strong> Petugas yang dihapus tidak bisa digunakan untuk scan.</p>
+<hr>
+<h2>6. MANAJEMEN POS JAGA</h2>
+<p>Menu ini untuk mengelola lokasi pos jaga.</p>
+<h3>Mengakses Menu Pos:</h3>
+<ol>
+<li>Klik menu <strong>&quot;Pos&quot;</strong> di sidebar kiri</li>
+</ol>
+<h3>Membuat Pos Baru:</h3>
+<ol>
+<li><p>Klik tombol <strong>&quot;+ Tambah Pos&quot;</strong></p>
+</li>
+<li><p>Isi form:</p>
+<pre><code>Nama: Pos 1 Utara
+Lokasi: Gerbang Utara Blok F
+</code></pre>
+</li>
+<li><p>Klik <strong>&quot;Simpan&quot;</strong></p>
+</li>
+</ol>
+<h3>Contoh Penamaan Pos:</h3>
+<ul>
+<li>&quot;Pos 1 Utara&quot; - Gerbang utara</li>
+<li>&quot;Pos 2 Timur&quot; - Gerbang timur</li>
+<li>&quot;Pos 3 Selatan&quot; - Gerbang selatan</li>
+<li>&quot;Pos Pusat&quot; - Pos di tengah lingkungan</li>
+</ul>
+<h3>Mengedit/Menghapus Pos:</h3>
+<p>Sama seperti menu Petugas, gunakan tombol edit atau hapus.</p>
+<hr>
+<h2>7. MANAJEMEN QR CODE</h2>
+<p>Menu ini untuk membuat dan mengelola QR code untuk setiap rumah/blok.</p>
+<h3>Mengakses Menu QR:</h3>
+<ol>
+<li>Klik menu <strong>&quot;QR&quot;</strong> di sidebar kiri</li>
+</ol>
+<h3>Membuat QR Code Baru:</h3>
+<ol>
+<li><p>Klik tombol <strong>&quot;+ Buat QR&quot;</strong></p>
+</li>
+<li><p>Isi form:</p>
+<pre><code>Nama: Block A-101
+Penanggung Jawab: Bpk. Ahmad
+Berlaku Dari: 2026-03-10
+Berlaku Sampai: 2026-04-10
+</code></pre>
+</li>
+<li><p>Klik <strong>&quot;Simpan &amp; Generate QR&quot;</strong></p>
+</li>
+<li><p>QR Code akan dibuat otomatis dengan format UUID</p>
+</li>
+</ol>
+<h3>Format Penamaan QR:</h3>
+<p>Disarankan menggunakan format yang konsisten:</p>
+<ul>
+<li>&quot;Block A-101&quot; - Untuk rumah</li>
+<li>&quot;Block B-201&quot; - Untuk rumah</li>
+<li>&quot;Pos Jaga 1&quot; - Untuk pos</li>
+<li>&quot;Ruang Tamu&quot; - Untuk ruangan umum</li>
+</ul>
+<h3>Download QR Code:</h3>
+<h4>Single Download:</h4>
+<ol>
+<li>Klik icon download (⬇️) pada QR yang dipilih</li>
+<li>Gambar QR akan terdownload dalam format PNG</li>
+</ol>
+<h4>Batch Download (PDF):</h4>
+<ol>
+<li>Pilih beberapa QR dengan mencentang checkbox</li>
+<li>Klik tombol <strong>&quot;Download PDF&quot;</strong></li>
+<li>PDF berisi semua QR yang dipilih akan terdownload</li>
+</ol>
+<h3>Toggle Aktif/Nonaktif:</h3>
+<ol>
+<li>Klik tombol toggle (🔘) pada kolom &quot;Status&quot;</li>
+<li>QR non-aktif tidak bisa discan oleh mobile app</li>
+</ol>
+<h3>Generate QR UUID Baru:</h3>
+<p>Jika ingin membuat UUID baru tanpa menyimpan ke database:</p>
+<ol>
+<li>Klik tombol <strong>&quot;Generate UUID&quot;</strong></li>
+<li>UUID baru akan dibuat</li>
+<li>Bisa digunakan untuk keperluan lain</li>
+</ol>
+<hr>
+<h2>8. MANAJEMEN PENGUMUMAN</h2>
+<p>Menu ini untuk membuat pengumuman yang akan ditampilkan di mobile app.</p>
+<h3>Mengakses Menu Pengumuman:</h3>
+<ol>
+<li>Klik menu <strong>&quot;Pengumuman&quot;</strong> di sidebar kiri</li>
+</ol>
+<h3>Membuat Pengumuman Baru:</h3>
+<ol>
+<li><p>Klik tombol <strong>&quot;+ Buat Pengumuman&quot;</strong></p>
+</li>
+<li><p>Isi form:</p>
+<pre><code>Judul: Jam Malam Dimulai Pukul 22:00
+Isi Pengumuman: Diberitahukan kepada seluruh warga...
+Prioritas: Penting
+</code></pre>
+</li>
+<li><p>Klik <strong>&quot;Simpan&quot;</strong></p>
+</li>
+</ol>
+<h3>Tingkat Prioritas:</h3>
+<table>
+<thead>
+<tr>
+<th>Prioritas</th>
+<th>Keterangan</th>
+<th>Warna</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Normal</strong></td>
+<td>Pengumuman biasa</td>
+<td>Hijau</td>
+</tr>
+<tr>
+<td><strong>Penting</strong></td>
+<td>Pengumuman penting</td>
+<td>Kuning</td>
+</tr>
+<tr>
+<td><strong>Urgent</strong></td>
+<td>Pengumuman sangat penting</td>
+<td>Merah</td>
+</tr>
+</tbody></table>
+<h3>Menampilkan/Menyembunyikan:</h3>
+<ol>
+<li>Klik toggle pada kolom &quot;Status&quot;</li>
+<li>Pengumuman non-aktif tidak akan muncul di mobile</li>
+</ol>
+<hr>
+<h2>9. LIHAT RIWAYAT SCAN</h2>
+<p>Menu ini untuk memantau semua aktivitas scan masuk/keluar.</p>
+<h3>Mengakses Menu Logs:</h3>
+<ol>
+<li>Klik menu <strong>&quot;Logs&quot;</strong> di sidebar kiri</li>
+</ol>
+<h3>Fitur Filter:</h3>
+<h4>1. Pencarian Text:</h4>
+<ul>
+<li>Ketik di kotak pencarian</li>
+<li>Mencari berdasarkan: nama QR, penanggung jawab, petugas, pos</li>
+</ul>
+<h4>2. Filter Tanggal:</h4>
+<ul>
+<li><strong>Tanggal Mulai:</strong> Pilih tanggal awal</li>
+<li><strong>Tanggal Selesai:</strong> Pilih tanggal akhir</li>
+<li>Contoh: 1 Maret - 31 Maret 2026</li>
+</ul>
+<h4>3. Filter Pos:</h4>
+<ul>
+<li>Pilih pos tertentu dari dropdown</li>
+<li>Menampilkan hanya scan dari pos tersebut</li>
+</ul>
+<h4>4. Filter Tipe Scan:</h4>
+<ul>
+<li>Pilih: &quot;Semua&quot;, &quot;Masuk&quot;, atau &quot;Keluar&quot;</li>
+</ul>
+<h3>Mengurutkan Data:</h3>
+<p>Klik judul kolom untuk mengurutkan:</p>
+<ul>
+<li><strong>Waktu</strong> - Klik untuk urutkan naik/turun</li>
+<li><strong>Nama</strong> - Klik untuk urutkan A-Z/Z-A</li>
+</ul>
+<h3>Export ke Excel:</h3>
+<ol>
+<li>Atur filter sesuai kebutuhan</li>
+<li>Klik tombol <strong>&quot;Export Excel&quot;</strong> (⬇️)</li>
+<li>File Excel akan terdownload</li>
+</ol>
+<p>Format Excel:</p>
+<pre><code>| Waktu            | Nama | Penanggung Jawab | Petugas | Pos  | Tipe Scan |
+|------------------|------|------------------|---------|------|-----------|
+| 13-03-2026 18:30 | Block A-101 | Bpk. Ahmad | Bpk. Joko | Pos 1 | Masuk |
+</code></pre>
+<h3>Refresh Otomatis:</h3>
+<p>Data akan direfresh otomatis setiap <strong>15 detik</strong></p>
+<hr>
+<h2>10. PENGATURAN KONFIGURASI</h2>
+<p>Menu ini untuk mengatur pengaturan aplikasi.</p>
+<h3>Mengakses Menu Configs:</h3>
+<ol>
+<li>Klik menu <strong>&quot;Configs&quot;</strong> di sidebar kiri</li>
+</ol>
+<h3>Konfigurasi Tersedia:</h3>
+<h4>1. APP_TITLE</h4>
+<ul>
+<li><strong>Keterangan:</strong> Judul aplikasi untuk home screen mobile</li>
+<li><strong>Value:</strong> &quot;Pengamanan Lebaran&quot;</li>
+<li><strong>Bisa Diubah:</strong> Ya</li>
+</ul>
+<h4>2. HOME_SCREEN_BANNER</h4>
+<ul>
+<li><strong>Keterangan:</strong> URL gambar banner untuk home screen</li>
+<li><strong>Value:</strong> URL gambar (PNG/JPG)</li>
+<li><strong>Bisa Diubah:</strong> Ya</li>
+</ul>
+<h4>3. mobile_pin</h4>
+<ul>
+<li><strong>Keterangan:</strong> PIN global untuk login mobile app</li>
+<li><strong>Value:</strong> 6 digit angka</li>
+<li><strong>Bisa Diubah:</strong> Ya</li>
+<li>⚠️ <strong>Hati-hati:</strong> Mengubah PIN akan mempengaruhi semua petugas</li>
+</ul>
+<h3>Mengubah Konfigurasi:</h3>
+<ol>
+<li>Klik icon edit (✏️) pada config yang dipilih</li>
+<li>Ubah value</li>
+<li>Klik <strong>&quot;Simpan&quot;</strong></li>
+</ol>
+<hr>
+<h2>11. FAQ</h2>
+<h3>Q: Bagaimana jika saya lupa password?</h3>
+<p><strong>A:</strong> Hubungi superadmin atau developer untuk reset password.</p>
+<h3>Q: Berapa batas maksimal QR code yang bisa dibuat?</h3>
+<p><strong>A:</strong> Tidak ada batas. Anda bisa membuat sebanyak yang dibutuhkan.</p>
+<h3>Q: Apakah QR code bisa dipakai ulang tahun depan?</h3>
+<p><strong>A:</strong> Ya, cukup buat QR baru dengan periode tahun berikutnya.</p>
+<h3>Q: Bagaimana jika petugas lupa PIN?</h3>
+<p><strong>A:</strong> PIN adalah global (sama untuk semua petugas). Hubungi admin untuk mengetahui PIN.</p>
+<h3>Q: Apakah data scan bisa dihapus?</h3>
+<p><strong>A:</strong> Ya, tapi hanya yang sudah disinkronkan ke server. Data yang belum disinkron tidak bisa dihapus.</p>
+<h3>Q: Berapa lama data tersimpan?</h3>
+<p><strong>A:</strong> Data akan tersimpan selamanya di database, kecuali dihapus secara manual.</p>
+<h3>Q: Apakah bisa export laporan per bulan?</h3>
+<p><strong>A:</strong> Ya, gunakan filter tanggal dan pilih rentang tanggal bulan yang diinginkan, lalu klik &quot;Export Excel&quot;.</p>
+<h3>Q: Bagaimana jika ada scan ganda?</h3>
+<p><strong>A:</strong> Sistem memperbolehkan scan ganda dalam sehari. Tidak ada batasan berapa kali satu QR bisa discan.</p>
+<h3>Q: Apa bedanya Masuk dan Keluar?</h3>
+<p><strong>A:</strong></p>
+<ul>
+<li><strong>Masuk:</strong> Tamu/warga masuk ke lingkungan</li>
+<li><strong>Keluar:</strong> Tamu/warga keluar dari lingkungan</li>
+</ul>
+<h3>Q: Berapa minimal karakter password?</h3>
+<p><strong>A:</strong> Minimal 6 karakter.</p>
+<hr>
+<h2>12. TIPS &amp; TRIK</h2>
+<h3>💡 Tips Pengelolaan QR Code:</h3>
+<ol>
+<li><strong>Gunakan penamaan konsisten</strong> - Lebih mudah dicari</li>
+<li><strong>Set periode validity</strong> - QR otomatis tidak berlaku setelah tanggal</li>
+<li><strong>Download dalam batch</strong> - Hemat waktu saat cetak banyak QR</li>
+</ol>
+<h3>💡 Tips Pengelolaan Petugas:</h3>
+<ol>
+<li><strong>Pastikan NIK valid</strong> - 16 digit angka</li>
+<li><strong>Nomor HP aktif</strong> - Untuk komunikasi jika ada masalah</li>
+</ol>
+<h3>💡 Tips Monitoring:</h3>
+<ol>
+<li><strong>Gunakan filter</strong> - Lebih spesifik data yang ditampilkan</li>
+<li><strong>Export berkala</strong> - Backup data laporan</li>
+<li><strong>Pantau dashboard</strong> - Cek statistik harian</li>
+</ol>
+<hr>
+<h2>13. KONTAK SUPPORT</h2>
+<p>Jika mengalami masalah atau memiliki pertanyaan:</p>
+<p>📧 <strong>Email:</strong> <a href="mailto:admin@blokf.hadirapp.com">admin@blokf.hadirapp.com</a>
+📱 <strong>WhatsApp:</strong> [Nomor Admin]
+🌐 <strong>Website:</strong> <a href="https://blokf.hadirapp.com">https://blokf.hadirapp.com</a></p>
+<hr>
+<h2>14. CHANGELOG</h2>
+<h3>Versi 1.0 (Maret 2026)</h3>
+<ul>
+<li>✅ Initial release</li>
+<li>✅ Fitur manajemen user, petugas, pos, QR</li>
+<li>✅ Fitur pengumuman</li>
+<li>✅ Fitur monitoring dan laporan</li>
+<li>✅ Mobile app integration</li>
+</ul>
+<hr>
+<p><strong>Selamat menggunakan aplikasi!</strong> 🎉</p>
+<p><em>Dokumentasi ini akan terus diupdate seiring dengan perkembangan aplikasi.</em></p>
+
+        </div>
+    </div>
+</body>
+</html>

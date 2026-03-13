@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blokf - FLOW_PROSES</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 2rem;
+        }
+        .content h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        .content h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .content h3 {
+            font-size: 1.25rem;
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .content p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .content ul, .content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        .content code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+        }
+        .content pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+        .content pre code {
+            background: transparent;
+            padding: 0;
+        }
+        .content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .content a:hover {
+            text-decoration: underline;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        .content blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        .content th, .content td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .content th {
+            background: #f4f4f4;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>blokf - FLOW_PROSES</h1>
+        </header>
+        <div class="content">
+            <h1>FLOW PROSES PENGGUNAAN APLIKASI</h1>
+<h2>Sistem Pengamanan Lebaran Blok F RT 024</h2>
+<hr>
+<p><strong>Versi:</strong> 1.0
+<strong>Tanggal:</strong> Maret 2026</p>
+<hr>
+<h2>📋 DAFTAR ISI</h2>
+<ol>
+<li><a href="#1-flow-admin-dashboard">Flow Admin Dashboard</a></li>
+<li><a href="#2-flow-mobile-app">Flow Mobile App</a></li>
+<li><a href="#3-flow-integrasi-admin-mobile">Flow Integrasi Admin-Mobile</a></li>
+</ol>
+<hr>
+<h2>1. FLOW ADMIN DASHBOARD</h2>
+<h3>1.1 Flow Login dan Setup Awal</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[Buka Browser] --&gt; B[Masukkan URL: blokf.hadirapp.com]
+    B --&gt; C[Halaman Login]
+    C --&gt; D{Masukkan Kredensial}
+    D --&gt;|Username &amp; Password| E[Login Button]
+    E --&gt; F{Validasi Login}
+    F --&gt;|Gagal| G[Tampilkan Error]
+    G --&gt; C
+    F --&gt;|Berhasil| H[Dashboard]
+    H --&gt; I{Pertama Kali?}
+    I --&gt;|Ya| J[Ganti Password Disarankan]
+    I --&gt;|Tidak| K[Lanjut ke Dashboard]
+    J --&gt; K
+</code></pre>
+<hr>
+<h3>1.2 Flow Manajemen Petugas Jaga</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[Menu Petugas] --&gt; B[Klik Tambah Petugas]
+    B --&gt; C[Form Input Petugas]
+    C --&gt; D{Input Data}
+    D --&gt;|Nama| E[Nama Lengkap]
+    D --&gt;|NIK| F[16 Digit Angka]
+    D --&gt;|No HP| G[10-15 Digit Angka]
+    E --&gt; H[Klik Simpan]
+    F --&gt; H
+    G --&gt; H
+    H --&gt; I{Validasi Data}
+    I --&gt;|Gagal| J[Tampilkan Error]
+    J --&gt; C
+    I --&gt;|Berhasil| K[Petugas Berhasil Dibuat]
+    K --&gt; L[Daftar Petugas]
+
+    L --&gt; M{Edit Petugas}
+    M --&gt;|Klik Edit| N[Ubah Data]
+    N --&gt; O[Klik Simpan]
+    O --&gt; P[Data Terupdate]
+
+    L --&gt; Q{Hapus Petugas}
+    Q --&gt;|Klik Hapus| R[Konfirmasi Hapus]
+    R --&gt;|Ya| S[Soft Delete Petugas]
+    R --&gt;|Tidak| L
+</code></pre>
+<hr>
+<h3>1.3 Flow Manajemen QR Code</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[Menu QR] --&gt; B[Klik Buat QR]
+    B --&gt; C[Form Input QR]
+    C --&gt; D{Input Data}
+    D --&gt;|Nama| E[Block A-101]
+    D --&gt;|Penanggung Jawab| F[Bpk. Ahmad]
+    D --&gt;|Periode Berlaku| G[Tanggal Dari-Sampai]
+    E --&gt; H[Klik Simpan &amp; Generate QR]
+    F --&gt; H
+    G --&gt; H
+    H --&gt; I{Validasi &amp; Generate}
+    I --&gt;|Gagal| J[Tampilkan Error]
+    J --&gt; C
+    I --&gt;|Berhasil| K[UUID QR Dibuat Otomatis]
+    K --&gt; L[QR Code Berhasil Dibuat]
+    L --&gt; M[Daftar QR Code]
+
+    M --&gt; N{Download QR}
+    N --&gt;|Single Download| O[Klik Icon Download]
+    O --&gt; P[QR PNG Terdownload]
+
+    N --&gt;|Batch Download| Q[Pilih Beberapa QR]
+    Q --&gt; R[Klik Download PDF]
+    R --&gt; S[PDF Berisi QR Terdownload]
+
+    M --&gt; T{Toggle Status}
+    T --&gt;|Klik Toggle| U{Status Aktif?}
+    U --&gt;|Aktif| V[QR Menjadi Nonaktif]
+    U --&gt;|Nonaktif| W[QR Menjadi Aktif]
+</code></pre>
+<hr>
+<h3>1.4 Flow Monitoring Scan Logs</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[Menu Logs] --&gt; B[Daftar Scan Logs]
+    B --&gt; C{Perlu Filter Data?}
+    C --&gt;|Ya| D{Pilih Filter}
+    D --&gt;|Search| E[Ketik Keyword]
+    D --&gt;|Tanggal| F[Pilih Rentang Tanggal]
+    D --&gt;|Pos| G[Pilih Pos Dropdown]
+    D --&gt;|Tipe Scan| H[Pilih Masuk/Keluar]
+    E --&gt; I[Tampilkan Filtered Logs]
+    F --&gt; I
+    G --&gt; I
+    H --&gt; I
+
+    C --&gt;|Tidak| I
+
+    I --&gt; J{Perlu Export?}
+    J --&gt;|Ya| K[Klik Export Excel]
+    K --&gt; L[File Excel Terdownload]
+    J --&gt;|Tidak| M[Monitoring Lanjutan]
+
+    M --&gt; N[Auto Refresh 15 Detik]
+    N --&gt; O
+</code></pre>
+<hr>
+<h2>2. FLOW MOBILE APP</h2>
+<h3>2.1 Flow Login dan Setup</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[Buka Aplikasi] --&gt; B[Splash Screen]
+    B --&gt; C[Halaman PIN]
+    C --&gt; D[Masukkan 6-Digit PIN]
+    D --&gt; E[Klik Masuk]
+    E --&gt; F{Validasi PIN}
+    F --&gt;|Gagal| G[Tampilkan Error]
+    G --&gt; C
+    F --&gt;|Berhasil| H[Halaman Pemilihan Petugas &amp; Pos]
+    H --&gt; I{Sudah Pilih?}
+    I --&gt;|Belum| J[Pilih Petugas]
+    J --&gt; K[Pilih Pos]
+    K --&gt; L[Klik Simpan]
+    L --&gt; M[Home Screen]
+    I --&gt;|Sudah| M
+</code></pre>
+<hr>
+<h3>2.2 Flow Scan QR Code</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[Tab Scan] --&gt; B[Izinkan Akses Kamera]
+    B --&gt; C[Kamera Aktif]
+    C --&gt; D[Arahkan ke QR Code]
+    D --&gt; E{QR Terdeteksi?}
+    E --&gt;|Belum| D
+    E --&gt;|Ya| F{Tampilkan Pilihan Tipe Scan}
+    F --&gt; G[Pilih: MASUK atau KELUAR]
+    G --&gt; H[Klik Tombol SCAN]
+    H --&gt; I{Proses Scan}
+    I --&gt;|Gagal| J{Error Type}
+    J --&gt;|QR Tidak Valid| K[Tampilkan: QR Tidak Valid]
+    J --&gt;|QR Tidak Aktif| L[Tampilkan: QR Tidak Aktif]
+    J --&gt;|Network Error| M[Simpan ke Local Database]
+    K --&gt; N[Kembali ke Scanner]
+    L --&gt; N
+    M --&gt; N
+    I --&gt;|Berhasil| O{Status Koneksi}
+    O --&gt;|Online| P[Simpan ke Server &amp; Local]
+    O --&gt;|Offline| Q[Simpan ke Local - Pending]
+    P --&gt; R[Tampilkan: Scan Berhasil]
+    Q --&gt; S[Status: Pending Sync]
+    R --&gt; T[Klik OK]
+    S --&gt; T[Kembali ke Scanner]
+    T --&gt; U[Siap Scan Berikutnya]
+    N --&gt; U
+</code></pre>
+<hr>
+<h3>2.3 Flow Offline Sync</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[Scan di Offline Mode] --&gt; B[Data Disimpan Local]
+    B --&gt; C[Status: Pending Sync]
+    C --&gt; D{Koneksi Tersedia?}
+    D --&gt;|Belum| E[Tetap Pending]
+    D --&gt;|Ya| F[Auto Sync Trigger]
+    F --&gt; G[WorkManager Check]
+    G --&gt; H{Sync Conditions}
+    H --&gt;|Charging + Internet| I[Sync Process]
+    H --&gt;|Tidak| J[Tunggu 15 Menit]
+    I --&gt; K[Ambil Data Pending]
+    K --&gt; L[Kirim ke Server]
+    L --&gt; M{Server Response}
+    M --&gt;|Success| N[Update Local: Synced]
+    M --&gt;|Error| O[Data Tetap Pending]
+    N --&gt; P[Tampil Status: Synced ✅]
+    O --&gt; Q[Tampil Status: Pending ⏳]
+    J --&gt; H
+</code></pre>
+<hr>
+<h3>2.4 Flow Sync Master Data</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[Settings Menu] --&gt; B[Klik Sync Data]
+    B --&gt; C[Request ke Server]
+    C --&gt; D{Koneksi Internet}
+    D --&gt;|Offline| E[Tampilkan Error: Tidak Ada Internet]
+    E --&gt; F[Kembali]
+    D --&gt;|Online| G[Fetch Data]
+    G --&gt; H[Receive: Petugas List]
+    G --&gt; I[Receive: Pos List]
+    G --&gt; J[Receive: QR Code List]
+    G --&gt; K[Receive: Pengumuman List]
+    H --&gt; L[Simpan ke Local Database]
+    I --&gt; L
+    J --&gt; L
+    K --&gt; L
+    L --&gt; M[Data Master Terupdate]
+    M --&gt; N[Tampilkan: Sync Berhasil]
+</code></pre>
+<hr>
+<h2>3. FLOW INTEGRASI ADMIN-MOBILE</h2>
+<h3>3.1 Flow End-to-End: Dari Pembuatan QR Sampai Scan</h3>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant Admin as Admin Dashboard
+    participant Server as API Server
+    participant Mobile as Mobile App
+    participant Petugas as Petugas Jaga
+
+    Note over Admin: FLOW 1: Buat QR Code
+    Admin-&gt;&gt;Server: POST /api/qr
+    Server-&gt;&gt;Server: Generate UUID QR
+    Server-&gt;&gt;Admin: Return QR Data + UUID
+    Admin-&gt;&gt;Admin: Download/Print QR Code
+    Admin-&gt;&gt;Petugas: Berikan QR (Kartu/Stiker)
+
+    Note over Mobile: FLOW 2: Petugas Scan
+    Petugas-&gt;&gt;Mobile: Login dengan PIN
+    Mobile-&gt;&gt;Server: POST /api/mobile/auth/pin
+    Server-&gt;&gt;Mobile: Return JWT Token
+    Petugas-&gt;&gt;Mobile: Pilih Petugas &amp; Pos
+    Mobile-&gt;&gt;Mobile: Simpan Lokal
+
+    Petugas-&gt;&gt;Mobile: Buka Scanner
+    Petugas-&gt;&gt;Mobile: Arahkan ke QR Code
+    Mobile-&gt;&gt;Mobile: Deteksi QR
+    Petugas-&gt;&gt;Mobile: Pilih MASUK/KELUAR
+    Mobile-&gt;&gt;Server: POST /api/mobile/scan
+
+    alt Online Mode
+        Server-&gt;&gt;Server: Validate &amp; Save Log
+        Server-&gt;&gt;Mobile: Return: Scan Success
+        Mobile-&gt;&gt;Mobile: Simpan Local + Synced
+    else Offline Mode
+        Mobile-&gt;&gt;Mobile: Simpan Local Only
+        Mobile-&gt;&gt;Mobile: Status: Pending
+        Note over Mobile: Nanti akan auto-sync
+    end
+
+    Mobile-&gt;&gt;Petugas: Tampilkan: Scan Berhasil
+
+    Note over Admin: FLOW 3: Monitoring
+    Admin-&gt;&gt;Server: GET /api/logs
+    Server-&gt;&gt;Admin: Return Scan Logs
+    Admin-&gt;&gt;Admin: Monitoring Real-time
+</code></pre>
+<hr>
+<h3>3.2 Flow Offline → Online Sync</h3>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant Mobile as Mobile App
+    participant Local as Local DB
+    participant Server as API Server
+    participant Admin as Admin Dashboard
+
+    Note over Mobile: SCAN OFFLINE
+    Mobile-&gt;&gt;Mobile: QR Terdeteksi
+    Mobile-&gt;&gt;Local: INSERT INTO logs (pending)
+    Mobile-&gt;&gt;Petugas: Status: Pending Sync ⏳
+
+    Note over Mobile: ONLINE SYNC
+    Mobile-&gt;&gt;Server: POST /api/mobile/sync-logs
+    Server-&gt;&gt;Server: Validate &amp; Save Multiple Logs
+    Server-&gt;&gt;Mobile: Return: Synced Count
+    Mobile-&gt;&gt;Local: UPDATE logs (synced)
+    Mobile-&gt;&gt;Petugas: Status: Synced ✅
+
+    Note over Admin: MONITORING
+    Admin-&gt;&gt;Server: GET /api/logs
+    Server-&gt;&gt;Admin: Return All Logs (incl offline sync)
+    Admin-&gt;&gt;Admin: View Complete History
+</code></pre>
+<hr>
+<h3>3.3 Flow Pengumuman System</h3>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant Admin as Admin Dashboard
+    participant Server as API Server
+    participant Mobile as Mobile App
+    participant Petugas as Petugas Jaga
+
+    Note over Admin: BUAT PENGUMUMAN
+    Admin-&gt;&gt;Server: POST /api/pengumuman
+    Server-&gt;&gt;Server: Save to Database
+    Server-&gt;&gt;Admin: Return: Pengumuman Created
+
+    Note over Mobile: SYNC PENGUMUMAN
+    Mobile-&gt;&gt;Server: GET /api/mobile/sync
+    Server-&gt;&gt;Mobile: Return Master Data (incl. Pengumuman)
+    Mobile-&gt;&gt;Mobile: Simpan ke Local DB
+
+    Note over Petugas: BACA PENGUMUMAN
+    Petugas-&gt;&gt;Mobile: Buka Tab Pengumuman
+    Mobile-&gt;&gt;Mobile: Tampilkan Daftar
+    Petugas-&gt;&gt;Mobile: Baca Pengumuman
+
+    Note over Admin: MONITORING
+    Admin-&gt;&gt;Server: GET /api/pengumuman
+    Server-&gt;&gt;Admin: Return Pengumuman List
+    Admin-&gt;&gt;Admin: Monitoring Status
+</code></pre>
+<hr>
+<h2>4. FLOW DIAGRAM ASCII</h2>
+<h3>4.1 Flow Login Admin</h3>
+<pre><code>┌─────────┐
+│ Buka    │
+│ Browser │
+└────┬────┘
+     │
+     ▼
+┌─────────────────┐
+│ blokf.hadirapp. │
+│     com         │
+└────┬────────────┘
+     │
+     ▼
+┌─────────────────┐
+│  LOGIN SCREEN   │
+│ ┌─────────────┐ │
+│ │ Username    │ │
+│ │ Password    │ │
+│ └─────────────┘ │
+│ ┌─────────────┐ │
+│ │ [LOGIN]     │ │
+│ └─────────────┘ │
+└────┬────────────┘
+     │
+     ▼
+┌─────────────────┐
+│  DASHBOARD      │
+│                 │
+│ ┌─────────────┐ │
+│ │ Statistics  │ │
+│ │ Recent Scan │ │
+│ └─────────────┘ │
+└─────────────────┘
+</code></pre>
+<hr>
+<h3>4.2 Flow Buat QR Code</h3>
+<pre><code>┌──────────────────┐
+│   MENU QR        │
+└────┬─────────────┘
+     │
+     ▼
+┌──────────────────┐
+│  KLIK + BUAT QR  │
+└────┬─────────────┘
+     │
+     ▼
+┌──────────────────┐
+│  FORM INPUT QR   │
+│ ┌──────────────┐ │
+│ │ Nama         │ │
+│ │ Penanggung   │ │
+│ │ Jawab        │ │
+│ │ Valid Dari   │ │
+│ │ Valid Sampai │ │
+│ └──────────────┘ │
+│ ┌──────────────┐ │
+│ │ [SIMPAN &amp;    │ │
+│ │  GENERATE QR] │ │
+│ └──────────────┘ │
+└────┬─────────────┘
+     │
+     ▼
+┌──────────────────┐
+│  SYSTEM          │
+│ ┌──────────────┐ │
+│ │ Generate UUID │ │
+│ │ Save to DB    │ │
+│ └──────────────┘ │
+└────┬─────────────┘
+     │
+     ▼
+┌──────────────────┐
+│  SUCCESS         │
+│                 │
+│ QR Code Created │
+│ UUID: xxx-xxx-xx│
+│                 │
+│ ┌──────────────┐ │
+│ │ [DOWNLOAD]    │ │
+│ │ [PRINT]       │ │
+│ └──────────────┘ │
+└──────────────────┘
+</code></pre>
+<hr>
+<h3>4.3 Flow Scan Mobile</h3>
+<pre><code>┌──────────────┐
+│ TAB SCAN     │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────┐
+│ KAMERA AKTIF │
+│ ┌─────────┐  │
+│ │   QR    │  │
+│ │  FRAME  │  │
+│ └─────────┘  │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────┐
+│ SCAN SUCCESS │
+│              │
+│ QR Terbaca   │
+│ Block A-101  │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────┐
+│ PILIH TIPE   │
+│ ┌──────────┐ │
+│ │ MASUK    │ │
+│ │ KELUAR   │ │
+│ └──────────┘ │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────┐
+│ CONFIRM SCAN │
+│ ┌──────────┐ │
+│ │ [SCAN]   │ │
+│ └──────────┘ │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────┐
+│  PROSES SCAN │
+│              │
+│ Validate QR  │
+│ Save to DB   │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────┐
+│  SUCCESS ✅  │
+│              │
+│ Block A-101  │
+│ Masuk        │
+│ 13:30 WIB    │
+└──────────────┘
+</code></pre>
+<hr>
+<h3>4.4 Flow Offline Sync</h3>
+<pre><code>┌──────────────┐
+│ OFFLINE MODE │
+│              │
+│ No Internet  │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────┐
+│  SCAN QR     │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────────┐
+│  SAVE LOCAL ONLY │
+│                  │
+│  Status: PENDING │
+│  ⏳             │
+└────┬─────────────┘
+     │
+     ▼
+┌──────────────┐
+│ WAITING      │
+│              │
+│ Untuk Online │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────┐
+│ CONNECTION   │
+│ RESTORED!    │
+│              │
+│ WiFi/Data On │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────┐
+│ AUTO SYNC    │
+│              │
+│ WorkManager  │
+│ Every 15 min │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────┐
+│  SYNC TO     │
+│  SERVER      │
+└────┬─────────┘
+     │
+     ▼
+┌──────────────┐
+│  SUCCESS ✅  │
+│              │
+│ Status: SYNC │
+│  ✅           │
+└──────────────┘
+</code></pre>
+<hr>
+<h2>5. DECISION TREE</h2>
+<h3>5.1 Decision Tree: Scan Result</h3>
+<pre><code>                    ┌───────────┐
+                    │   SCAN    │
+                    └─────┬─────┘
+                          │
+                          ▼
+                   ┌────────────────┐
+                   │ QR Detected?   │
+                   └────┬───────┬───┘
+                       │NO       │YES
+                       ▼          ▼
+                ┌─────────┐  ┌──────────────┐
+                │ Continue│  │ Show Options │
+                │ Scan   │  └──────┬───────┘
+                └─────────┘         │
+                                     ▼
+                          ┌────────────────────┐
+                          │ User Select Type   │
+                          └──────┬───────┬────┘
+                                 │       │
+                              ┌───┘       └───┐
+                              │MASUK        │KELUAR
+                              ▼             ▼
+                      ┌─────────────┐ ┌─────────────┐
+                      │ Send to     │ │ Send to     │
+                      │ Server      │ │ Server      │
+                      └──────┬──────┘ └──────┬──────┘
+                             │              │
+                             ▼              ▼
+                      ┌────────────────────────┐
+                      │   VALIDATION RESULT    │
+                      └──────┬──────────┬──────┘
+                             │          │
+                        ┌────┴────┐  ┌───┴────┐
+                        │VALID    │  │INVALID │
+                        ▼         ▼  ▼        ▼
+                  ┌─────────┐ ┌──────┐ ┌──────────┐
+                  │SUCCESS  │ │ERROR │ │QR NOT   │
+                  │         │ │      │ │FOUND    │
+                  └────┬────┘ └──┬───┘ └────┬─────┘
+                       │        │          │
+                       ▼        ▼          ▼
+                ┌─────────────────────────┐
+                │   SHOW RESULT TO USER    │
+                └─────────────────────────┘
+</code></pre>
+<hr>
+<h3>5.2 Decision Tree: Sync Strategy</h3>
+<pre><code>                    ┌───────────────┐
+                    │    SCAN QR     │
+                    └───────┬───────┘
+                            │
+                            ▼
+                    ┌────────────────┐
+                    │ Check Internet │
+                    └────┬───────┬───┘
+                         │YES      │NO
+                         │         │
+                    ┌────┴──┐  ┌───┴────┐
+                    │SYNC  │  │SAVE   │
+                    │NOW  │  │LOCAL  │
+                    └─────┘  └───┬────┘
+                              │
+                              ▼
+                    ┌─────────────────┐
+                    │ Status: PENDING │
+                    │ ⏳              │
+                    └──────┬──────────┘
+                           │
+                           ▼
+                    ┌─────────────────┐
+                    │ WorkManager     │
+                    │ Wait 15 min     │
+                    └──────┬──────────┘
+                           │
+                           ▼
+                    ┌─────────────────┐
+                    │ Check Internet │
+                    └────┬───────┬───┘
+                         │YES      │NO
+                         │         │
+                    ┌────┴──┐  ┌───┴────┐
+                    │SYNC  │  │WAIT   │
+                    │NOW  │  │15 MIN │
+                    └─────┘  └───────┘
+</code></pre>
+<hr>
+<h2>6. STATE DIAGRAM</h2>
+<h3>6.1 State Diagram: Scan Process</h3>
+<pre><code>┌─────────┐
+│  READY  │ ──────────────┐
+└────┬────┘               │
+     │                   │
+     ▼                   │
+┌─────────┐               │
+│ SCANNING│               │
+└────┬────┘               │
+     │                   │
+     ▼                   ▼
+┌─────────────┐      ┌─────────┐
+│ QR_DETECTED │      │  ERROR  │
+└────┬────────┘      └────┬────┘
+     │                   │
+     ▼                   │
+┌─────────────┐          │
+│ SELECT_TYPE │          │
+└────┬────────┘          │
+     │                   │
+     ▼                   ▼
+┌─────────────┐      ┌─────────┐
+│  SCANNING   │      │  READY  │
+└────┬────────┘      └─────────┘
+     │
+     ▼
+┌─────────────┐
+│ VALIDATING  │
+└────┬────────┘
+     │
+     ▼
+┌─────┬───────┐
+│YES │ NO     │
+└─┬──┴────┬───┘
+  │        │
+  ▼        ▼
+┌──────┐ ┌──────┐
+│DONE ││ERROR│
+└──────┘ └──────┘
+</code></pre>
+<hr>
+<h2>7. USE CASE DIAGRAM</h2>
+<h3>7.1 Use Case: Admin</h3>
+<pre><code>┌─────────────────────────────────────────┐
+│              ADMIN SYSTEM                │
+└─────────────────────────────────────────┘
+              │
+       ┌──────┴──────┐
+       │             │
+    ┌──┴──┐      ┌───┴────┐
+    │Login│      │Manage  │
+    └──┬──┘      │Users   │
+       │         └───┬────┘
+       │             │
+       │       ┌────┴────┐
+       │       │Manage  │
+       │       │Petugas │
+       │       └────┬───┘
+       │           │
+       │       ┌────┴────┐
+       │       │Manage  │
+       │       │Pos     │
+       │       └────┬───┘
+       │           │
+       │       ┌────┴────┐
+       │       │Manage  │
+       │       │QR Code │
+       │       └────┬───┘
+       │           │
+       │       ┌────┴──────┐
+       │       │Manage    │
+       │       │Pengumuman│
+       │       └────┬─────┘
+       │           │
+       │       ┌────┴────┐
+       │       │View     │
+       │       │Logs     │
+       │       └────┬────┘
+       │           │
+       │       ┌────┴────┐
+       │       │Export   │
+       │       │Reports  │
+       │       └────────┘
+</code></pre>
+<hr>
+<h3>7.2 Use Case: Petugas</h3>
+<pre><code>┌─────────────────────────────────────────┐
+│            MOBILE APP                   │
+└─────────────────────────────────────────┘
+              │
+       ┌──────┴──────┐
+       │             │
+    ┌──┴──┐      ┌───┴─────┐
+    │Login│      │Sync     │
+    │PIN  │      │Data     │
+    └──┬──┘      └───┬─────┘
+       │             │
+       │       ┌────┴────┐
+       │       │Select   │
+       │       │Petugas  │
+       │       │&amp; Pos    │
+       │       └────┬─────┘
+       │           │
+       │       ┌────┴────┐
+       │       │View     │
+       │       │Announce │
+       │       └────┬────┘
+       │           │
+       │       ┌────┴────┐
+       │       │Scan QR  │
+       │       └────┬────┘
+       │           │
+       │       ┌────┴────┐
+       │       │View     │
+       │       │History  │
+       │       └────┬────┘
+       │           │
+       │       ┌────┴────┐
+       │       │Settings │
+       │       │Logout   │
+       │       └────────┘
+</code></pre>
+<hr>
+<h2>8. FLOW HIERARKI</h2>
+<h3>8.1 Hierarchy: Admin</h3>
+<pre><code>LEVEL 1: AUTHENTICATION
+├── Login
+├── Logout
+└── Change Password
+
+LEVEL 2: MASTER DATA MANAGEMENT
+├── User Management (Superadmin only)
+│   ├── Create User
+│   ├── Update User
+│   └── Delete User
+├── Petugas Management
+│   ├── Create Petugas
+│   ├── Update Petugas
+│   └── Delete Petugas
+├── Pos Management
+│   ├── Create Pos
+│   ├── Update Pos
+│   └── Delete Pos
+└── QR Code Management
+    ├── Create QR
+    ├── Update QR
+    ├── Toggle Active/Inactive
+    └── Delete QR
+
+LEVEL 3: OPERATIONAL
+├── Pengumuman Management
+│   ├── Create Pengumuman
+│   ├── Update Pengumuman
+│   └── Toggle Active/Inactive
+└── Monitoring
+    ├── View Logs
+    ├── Filter Logs
+    └── Export Reports
+
+LEVEL 4: CONFIGURATION
+└── System Configuration
+    ├── Update Config
+    └── View Config
+</code></pre>
+<hr>
+<h3>8.2 Hierarchy: Mobile</h3>
+<pre><code>LEVEL 1: AUTHENTICATION
+├── Login with PIN
+└── Select Petugas &amp; Pos
+
+LEVEL 2: MASTER DATA SYNC
+└── Sync Data from Server
+    ├── Sync Petugas
+    ├── Sync Pos
+    ├── Sync QR Codes
+    └── Sync Pengumuman
+
+LEVEL 3: OPERATIONS
+├── Scan QR Code
+│   ├── Detect QR
+│   ├── Select Type (Masuk/Keluar)
+│   └── Submit Scan
+└── View History
+    ├── View All Logs
+    ├── Delete Log (Synced only)
+    └── Refresh
+
+LEVEL 4: COMMUNICATION
+├── View Pengumuman
+└── Read Acknowledge
+
+LEVEL 5: SETTINGS
+├── Change Petugas
+├── Change Pos
+└── Logout
+</code></pre>
+<hr>
+<h2>9. TIMELINE FLOW</h2>
+<h3>9.1 Timeline: Setup Awal System</h3>
+<pre><code>HARI 1           HARI 2           HARI 3
+│                │                │
+│                │                │
+▼                ▼                ▼
+┌────────┐      ┌────────┐      ┌────────┐
+│Setup  │      │Create │      │Generate│
+│Server │      │Users  │      │QR Codes│
+└───┬───┘      └───┬────┘      └───┬────┘
+    │              │                │
+    └──────────────┴────────────────┘
+                   │
+                   ▼
+            ┌────────────┐
+            │   Briefing  │
+            │   Petugas   │
+            └────────────┘
+                   │
+                   ▼
+            ┌────────────┐
+            │  Mulai     │
+            │  Bertugas   │
+            └────────────┘
+</code></pre>
+<hr>
+<h3>9.2 Timeline: Proses Scan Harian</h3>
+<pre><code>      JADWAL PETUGAS
+
+SHIFT 1 (07:00 - 15:00)
+│
+├─ 07:00: Login &amp; Pilih Pos
+├─ 07:05: Sync Data Master
+├─ 07:10: Mulai Scan
+│  ├─ Scan Warga Masuk
+│  ├─ Scan Warga Keluar
+│  └─ Scan Berulang
+└─ 14:55: Sync Data (terakhir)
+
+      HANDOVER
+         │
+         ▼
+SHIFT 2 (15:00 - 23:00)
+│
+├─ 15:00: Login &amp; Pilih Pos
+├─ 15:05: Sync Data Master
+├─ 15:10: Mulai Scan
+│  ├─ Scan Warga Masuk
+│  ├─ Scan Warga Keluar
+│  └─ Scan Berulang
+└─ 22:55: Sync Data (terakhir)
+</code></pre>
+<hr>
+<h2>10. ER DIAGRAM (Entity Relationship)</h2>
+<pre><code>┌──────────┐       scans        ┌──────────┐
+│  QR CODE │◄───────────────► │   LOG    │
+│          │                   │          │
+└─────┬────┘                   └─────┬────┘
+      │                              │
+      │                              │
+      │ belongs_to                   │ at
+      ▼                              ▼
+┌──────────┐                    ┌──────────┐
+│   USER   │                    │  PETUGAS │
+│ (Owner)  │                    │          │
+└──────────┘                    └─────┬────┘
+                                       │
+                                       │ stationed_at
+                                       ▼
+                                ┌──────────┐
+                                │    POS   │
+                                └──────────┘
+</code></pre>
+<hr>
+<h2>11. ACTIVITY DIAGRAM</h2>
+<h3>11.1 Activity: Petugas Jaga Scan</h3>
+<pre><code>Petugas          Mobile App         Server
+   │                   │                │
+   │  Buka App         │                │
+   ├──────────────►   │                │
+   │                   │                │
+   │  Login PIN        │                │
+   ├──────────────►   │                │
+   │                   │                │
+   │  Pilih Petugas    │                │
+   ├──────────────►   │                │
+   │                   │                │
+   │  Pilih Pos        │                │
+   ├──────────────►   │                │
+   │                   │                │
+   │  Scan QR Code     │                │
+   ├──────────────►   │                │
+   │                   │  Validate QR   │
+   │                   ├──────────────► │
+   │                   │                │
+   │                   │◄──────────────┤
+   │                   │   QR Valid     │
+   │                   │                │
+   │  Pilih Tipe       │                │
+   │  (Masuk/Keluar)   │                │
+   ├──────────────►   │                │
+   │                   │                │
+   │  Konfirmasi Scan   │                │
+   ├──────────────►   │                │
+   │                   │  Save Log      │
+   │                   ├──────────────► │
+   │                   │                │
+   │                   │◄──────────────┤
+   │                   │   Success      │
+   │                   │                │
+   │◄──────────────────┤                │
+   │  Scan Berhasil    │                │
+   │                   │                │
+</code></pre>
+<hr>
+<h2>12. CHECKLIST FLOW</h2>
+<h3>12.1 Checklist: Admin Setup Baru</h3>
+<pre><code>□ INSTALLATION
+  □ Server is ready
+  □ Database is configured
+  □ Environment variables are set
+  □ Dependencies are installed
+  □ Database is seeded
+
+□ FIRST LOGIN
+  □ Access blokf.hadirapp.com
+  □ Login with superadmin/admin123
+  □ Change password (recommended)
+
+□ MASTER DATA SETUP
+  □ Create Petugas Jaga
+  □ Create Pos Jaga
+  □ Create QR Codes
+  □ Create Pengumuman (optional)
+
+□ MOBILE APP PREPARATION
+  □ Share APK to Petugas
+  □ Share PIN to Petugas
+  □ Brief Petugas about App Usage
+  □ Test Scan with Petugas
+</code></pre>
+<hr>
+<h3>12.2 Checklist: Petugas Setup Baru</h3>
+<pre><code>□ INSTALLATION
+  □ Receive APK file
+  □ Install application
+  □ Grant camera permission
+  □ Grant storage permission
+
+□ FIRST TIME
+  □ Open application
+  □ Enter PIN: 123456
+  □ Select your name
+  □ Select your pos
+  □ Click Save
+
+□ DATA SYNC
+  □ Open Settings
+  □ Click Sync Data
+  □ Wait for sync completion
+  □ Check if petugas/pos appear
+
+□ SCAN TEST
+  □ Go to Scan tab
+  □ Allow camera
+  □ Test scan with sample QR
+  □ Check scan result in Log tab
+  □ Confirm with admin
+
+□ READY FOR DUTY
+  □ Know the type: MASUK/KELUAR
+  □ Position camera correctly
+  □ Wait for QR detection
+  □ Select correct type
+  □ Confirm scan success
+</code></pre>
+<hr>
+<h2>13. INFRASTRUCTURE FLOW</h2>
+<h3>13.1 System Architecture Flow</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                        USER LAYER                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐          ┌──────────────┐                │
+│  │ Admin Web App│          │ Mobile App   │                │
+│  └──────┬───────┘          └──────┬───────┘                │
+│         │                         │                        │
+└─────────┼─────────────────────────┼────────────────────────┘
+          │                         │
+          ▼                         ▼
+┌─────────────────────────────────────────────────────────────┐
+│                      API GATEWAY                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌───────────────────────────────────────────────────┐     │
+│  │              REST API (Hono Framework)              │     │
+│  │                                                   │     │
+│  │  /auth/*      - Admin Authentication          │     │
+│  │  /mobile/*   - Mobile App Endpoints             │     │
+│  │  /users/*     - User Management                  │     │
+│  │  /petugas/*   - Petugas Management               │     │
+│  │  /pos/*       - Pos Management                   │     │
+│  │  /qr/*        - QR Code Management              │     │
+│  │  /pengumuman/* - Pengumuman Management           │     │
+│  │  /logs/*      - Scan Logs &amp; Reporting           │     │
+│  └───────────────────────────────────────────────────┘     │
+│                                                             │
+└─────────┼─────────────────────────────────────────────────┘
+          │
+          ▼
+┌─────────────────────────────────────────────────────────────┐
+│                      BUSINESS LOGIC                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │
+│  │ Auth Service│  │ Scan Service │  │ Sync Service │        │
+│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘        │
+│         │                │                │                 │
+└─────────┼────────────────┼────────────────┼─────────────────┘
+          │                │                │
+          ▼                ▼                ▼
+┌─────────────────────────────────────────────────────────────┐
+│                       DATA LAYER                              │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌───────────┐        ┌───────────┐      ┌───────────┐    │
+│  │   Users   │        │ Petugas   │      │    Pos    │    │
+│  └───────────┘        └───────────┘      └───────────┘    │
+│                                                             │
+│  ┌───────────┐        ┌───────────┐      ┌───────────┐    │
+│  │  QR Codes │        │Pengumuman │      │ Scan Logs │    │
+│  └───────────┘        └───────────┘      └───────────┘    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+          │
+          ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    POSTGRESQL DATABASE                          │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2>14. SWIMLANE DIAGRAM</h2>
+<h3>14.1 Swimlane: Admin Create QR → Petugas Scan</h3>
+<pre><code>ADMIN      SERVER      MOBILE     PETUGAS
+─────────  ────────    ────────   ────────
+   │          │           │           │
+   │Create QR  │           │           │
+   │───────►  │           │           │
+   │          │Generate UUID│           │
+   │          │Save to DB │           │
+   │          │           │           │
+   │◄────────│QR Data    │           │
+   │          │           │           │
+   │Download/  │           │           │
+   │Print QR  │           │           │
+   │          │           │           │
+   │Give QR   │           │           │
+   ├─────────►│           │           │
+   │          │           │           │
+   │          │           │Login PIN  │
+   │          │           ├──────────►│
+   │          │           │           │
+   │          │           │◄──────────│JWT Token
+   │          │           │           │
+   │          │           │Select Pet/Pos│
+   │          │           ├──────────►│
+   │          │           │           │
+   │          │           │◄──────────│Confirmed
+   │          │           │           │
+   │          │           │Open Scan   │
+   │          │           ├──────────►│
+   │          │           │           │
+   │          │           │Scan QR     │
+   │          │           ├──────────►│
+   │          │           │           │
+   │          │           │Select Type │
+   │          │           ├──────────►│
+   │          │           │           │
+   │          │           │Confirm Scan│
+   │          │           ├──────────►│
+   │          │           │           │
+   │          │Validate QR│           │
+   │          ├──────────►│           │
+   │          │Save Log   │           │
+   │          │           │           │
+   │          │◄─────────┤Success    │
+   │          │           ├──────────►│
+   │          │           │           │
+   │View Logs │           │           │
+   │◄─────────│           │           │
+   │          │           │           │
+</code></pre>
+<hr>
+<h2>15. DATA FLOW DIAGRAM</h2>
+<h3>15.1 Data Flow: Scan Process</h3>
+<pre><code>┌──────────┐
+│  QR CODE │
+│  (Sticker)│
+└────┬─────┘
+     │
+     │ SCANNED BY
+     ▼
+┌──────────────────────┐
+│   MOBILE CAMERA      │
+│                      │
+│  Image Capture       │
+│  QR Detection       │
+└──────┬───────────────┘
+       │
+       │ EXTRACT UUID
+       ▼
+┌──────────────────────┐
+│   MOBILE APP         │
+│                      │
+│  Validate UUID       │
+│  Check Local DB      │
+└──────┬───────────────┘
+       │
+       │ HTTP REQUEST
+       ▼
+┌──────────────────────┐
+│   API SERVER         │
+│                      │
+│  Validate UUID       │
+│  Check Database      │
+│  Create Log Entry    │
+└──────┬───────────────┘
+       │
+       │ RESPONSE
+       ▼
+┌──────────────────────┐
+│   MOBILE APP         │
+│                      │
+│  Save to Local DB    │
+│  Update UI           │
+│  Play Sound          │
+└──────────────────────┘
+</code></pre>
+<hr>
+<h2>16. SEQUENCE DIAGRAM: ERROR HANDLING</h2>
+<h3>16.1 Error Handling: Invalid QR</h3>
+<pre><code>Mobile           Server          Database
+  │               │                │
+  │ Scan QR       │                │
+  ├─────────────►│                │
+  │               │                │
+  │               │ Check UUID     │
+  │               ├──────────────►│
+  │               │                │
+  │               │◄───────────────┤
+  │               │   Not Found    │
+  │               │                │
+  │◄──────────────┤ 404 Error      │
+  │               │                │
+  │ Show Error    │                │
+  │ &quot;QR Tidak    │                │
+  │  Valid&quot;       │                │
+  │               │                │
+</code></pre>
+<hr>
+<h2>17. DEPLOYMENT FLOW</h2>
+<h3>17.1 Deployment Process</h3>
+<pre><code>┌──────────────┐
+│ DEVELOPMENT   │
+│              │
+│ • Code        │
+│ • Test        │
+│ • Build       │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│   STAGING    │
+│              │
+│ • Upload      │
+│ • Test        │
+│ • Verify     │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│ PRODUCTION   │
+│              │
+│ • Deploy      │
+│ • Monitor    │
+│ • Maintain   │
+└──────────────┘
+</code></pre>
+<hr>
+<h2>18. MAINTENANCE FLOW</h2>
+<h3>18.1 Backup &amp; Maintenance</h3>
+<pre><code>DAILY
+├─ Auto Sync (15 min)
+├─  Error Monitoring
+└─  Health Check
+
+WEEKLY
+├─  Backup Database
+├─  Review Logs
+└─  Cleanup Old Data
+
+MONTHLY
+├─  Update Dependencies
+├─  Security Audit
+└─  Performance Review
+
+YEARLY
+├─  Archive Old Data
+├─  System Update
+└─  Rebuild QR Codes
+</code></pre>
+<hr>
+<h2>19. KESIMPULAN</h2>
+<p>Dokumentasi flow proses ini memberikan panduan lengkap untuk:</p>
+<p>✅ <strong>Admin System</strong></p>
+<ul>
+<li>Flow login dan setup</li>
+<li>Flow manajemen master data</li>
+<li>Flow monitoring dan laporan</li>
+</ul>
+<p>✅ <strong>Mobile App</strong></p>
+<ul>
+<li>Flow login dan setup awal</li>
+<li>Flow scan QR code</li>
+<li>Flow offline sync</li>
+</ul>
+<p>✅ <strong>Integrasi</strong></p>
+<ul>
+<li>Flow end-to-end dari admin ke petugas</li>
+<li>Flow offline ke online sync</li>
+<li>Flow pengumuman system</li>
+</ul>
+<p>✅ <strong>Troubleshooting</strong></p>
+<ul>
+<li>Flow error handling</li>
+<li>Decision tree untuk berbagai skenario</li>
+<li>Checklist untuk setup</li>
+</ul>
+<hr>
+<p><strong>Dokumentasi ini akan terus diupdate seiring dengan perkembangan aplikasi.</strong></p>
+<p>Untuk pertanyaan atau klarifikasi, hubungi:</p>
+<ul>
+<li>📧 Email: <a href="mailto:admin@blokf.hadirapp.com">admin@blokf.hadirapp.com</a></li>
+<li>🌐 Website: <a href="https://blokf.hadirapp.com">https://blokf.hadirapp.com</a></li>
+</ul>
+
+        </div>
+    </div>
+</body>
+</html>

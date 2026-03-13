@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blokf - USER_GUIDE_MOBILE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 2rem;
+        }
+        .content h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        .content h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .content h3 {
+            font-size: 1.25rem;
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .content p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .content ul, .content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        .content code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+        }
+        .content pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+        .content pre code {
+            background: transparent;
+            padding: 0;
+        }
+        .content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .content a:hover {
+            text-decoration: underline;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        .content blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        .content th, .content td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .content th {
+            background: #f4f4f4;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>blokf - USER_GUIDE_MOBILE</h1>
+        </header>
+        <div class="content">
+            <h1>PANDUAN PENGGUNAAN APLIKASI MOBILE</h1>
+<h2>Sistem Pengamanan Lebaran Blok F RT 024</h2>
+<hr>
+<p><strong>Versi:</strong> 1.0
+<strong>Tanggal:</strong> Maret 2026
+<strong>Target Pengguna:</strong> Petugas Jaga</p>
+<hr>
+<h2>📋 DAFTAR ISI</h2>
+<ol>
+<li><a href="#1-pengantar">Pengantar</a></li>
+<li><a href="#2-instalasi-aplikasi">Instalasi Aplikasi</a></li>
+<li><a href="#3-login-pertama">Login Pertama</a></li>
+<li><a href="#4-menu-utama">Menu Utama</a></li>
+<li><a href="#5-scan-qr-code">Scan QR Code</a></li>
+<li><a href="#6-riwayat-scan">Riwayat Scan</a></li>
+<li><a href="#7-pengumuman">Pengumuman</a></li>
+<li><a href="#8-pengaturan">Pengaturan</a></li>
+<li><a href="#9-offline-mode">Offline Mode</a></li>
+<li><a href="#10-troubleshooting">Troubleshooting</a></li>
+</ol>
+<hr>
+<h2>1. PENGANTAR</h2>
+<p>Selamat datang di Panduan Penggunaan Aplikasi Mobile Sistem Pengamanan Lebaran Blok F RT 024.</p>
+<p>Aplikasi ini digunakan oleh petugas jaga untuk memindai (scan) QR code warga/tamu yang masuk atau keluar lingkungan.</p>
+<h3>Fitur Utama:</h3>
+<p>✅ <strong>Scan QR Code</strong> - Pindai QR dengan kamera
+✅ <strong>Riwayat Scan</strong> - Lihat scan yang sudah dilakukan
+✅ <strong>Pengumuman</strong> - Terima pengumuman penting
+✅ <strong>Offline Mode</strong> - Tetap bisa scan tanpa internet
+✅ <strong>Auto Sync</strong> - Sinkronisasi otomatis saat ada internet</p>
+<h3>Kebutuhan Sistem:</h3>
+<ul>
+<li><strong>Android:</strong> Versi 7.0 (Nougat) atau lebih tinggi</li>
+<li><strong>Kamera:</strong> Diperlukan untuk scan QR</li>
+<li><strong>Internet:</strong> Disarankan untuk sync data</li>
+<li><strong>Penyimpanan:</strong> Minimal 50 MB</li>
+</ul>
+<hr>
+<h2>2. INSTALASI APLIKASI</h2>
+<h3>Cara Install:</h3>
+<h4>Opsi 1: Dari File APK</h4>
+<ol>
+<li>Minta file APK dari admin</li>
+<li>Buka file <strong><code>pengamanan.apk</code></strong></li>
+<li>Jika muncul peringatan &quot;Unknown Sources&quot;, klik <strong>&quot;Settings&quot;</strong> dan aktifkan <strong>&quot;Allow from this source&quot;</strong></li>
+<li>Klik <strong>&quot;Install&quot;</strong></li>
+<li>Tunggu proses instalasi selesai</li>
+<li>Klik <strong>&quot;Buka&quot;</strong></li>
+</ol>
+<h4>Opsi 2: Dari Play Store</h4>
+<ol>
+<li>Buka Google Play Store</li>
+<li>Cari: <strong>&quot;Pengamanan Lebaran&quot;</strong></li>
+<li>Klik <strong>&quot;Install&quot;</strong></li>
+<li>Tunggu proses instalasi selesai</li>
+</ol>
+<hr>
+<h2>3. LOGIN PERTAMA</h2>
+<h3>Langkah-langkah Login:</h3>
+<ol>
+<li><p>Buka aplikasi <strong>&quot;Pengamanan Lebaran&quot;</strong></p>
+</li>
+<li><p>Halaman PIN akan muncul</p>
+</li>
+<li><p>Masukkan <strong>6-digit PIN</strong> yang diberikan admin:</p>
+<pre><code>PIN: 123456
+</code></pre>
+</li>
+<li><p>Klik tombol <strong>&quot;Masuk&quot;</strong></p>
+</li>
+<li><p>Setelah berhasil, Anda akan diminta memilih:</p>
+<ul>
+<li><strong>Petugas Jaga:</strong> Pilih nama Anda</li>
+<li><strong>Pos Jaga:</strong> Pilih pos tempat Anda bertugas</li>
+</ul>
+</li>
+<li><p>Klik <strong>&quot;Simpan&quot;</strong></p>
+</li>
+</ol>
+<h3>Ganti Petugas/Pos:</h3>
+<p>Jika berganti pos atau petugas:</p>
+<ol>
+<li>Klik menu <strong>&quot;Settings&quot;</strong> (⚙️) di pojok kanan atas</li>
+<li>Klik <strong>&quot;Pilih Petugas&quot;</strong></li>
+<li>Pilih petugas baru</li>
+<li>Klik <strong>&quot;Pilih Pos&quot;</strong></li>
+<li>Pilih pos baru</li>
+<li>Klik <strong>&quot;Simpan&quot;</strong></li>
+</ol>
+<hr>
+<h2>4. MENU UTAMA</h2>
+<p>Aplikasi memiliki <strong>4 tab utama</strong> di bagian bawah:</p>
+<pre><code>┌─────────────────────────────────────┐
+│                                     │
+│         [ICON]                      │
+│    Pengamanan Lebaran               │
+│                                     │
+│  ┌─────┬─────┬─────┬─────┐         │
+│  │ 🏠 │ 📷 │ 📋 │ 🔔 │         │
+│  │Home│Scan│Log │Annou│         │
+│  └─────┴─────┴─────┴─────┘         │
+│                                     │
+└─────────────────────────────────────┘
+</code></pre>
+<h3>Penjelasan Menu:</h3>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Menu</th>
+<th>Fungsi</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🏠</td>
+<td><strong>Home</strong></td>
+<td>Halaman utama dengan ringkasan info</td>
+</tr>
+<tr>
+<td>📷</td>
+<td><strong>Scan</strong></td>
+<td>Scan QR code masuk/keluar</td>
+</tr>
+<tr>
+<td>📋</td>
+<td><strong>Log</strong></td>
+<td>Riwayat scan yang sudah dilakukan</td>
+</tr>
+<tr>
+<td>🔔</td>
+<td><strong>Annou</strong></td>
+<td>Daftar pengumuman</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>5. SCAN QR CODE</h2>
+<h3>Persiapan Sebelum Scan:</h3>
+<p>Sebelum melakukan scan:</p>
+<ol>
+<li>✅ <strong>Pastikan sudah memilih petugas dan pos</strong> yang benar</li>
+<li>✅ <strong>Buka kamera</strong> dan arahkan ke QR code</li>
+<li>✅ <strong>Pastikan QR code terbaca jelas</strong></li>
+<li>✅ <strong>Pilih tipe scan:</strong> Masuk atau Keluar</li>
+</ol>
+<h3>Cara Scan QR:</h3>
+<h4>Langkah 1: Buka Menu Scan</h4>
+<ol>
+<li>Klik tab <strong>&quot;Scan&quot;</strong> di bagian bawah</li>
+<li>Izinkan akses kamera jika diminta</li>
+<li>Kamera akan aktif otomatis</li>
+</ol>
+<h4>Langkah 2: Arahkan ke QR Code</h4>
+<ol>
+<li>Arahkan kamera ke QR code yang ada di kartu/stiker</li>
+<li>QR code harus berada di dalam kotak frame</li>
+<li>Tunggu sampai QR terdeteksi</li>
+</ol>
+<h4>Langkah 3: Pilih Tipe Scan</h4>
+<p>Setelah QR terdeteksi:</p>
+<ol>
+<li><p>Pilih tipe scan:</p>
+<ul>
+<li><strong>🔽 MASUK</strong> - Untuk tamu/warga yang MASUK lingkungan</li>
+<li><strong>🔽 KELUAR</strong> - Untuk tamu/warga yang KELUAR lingkungan</li>
+</ul>
+</li>
+<li><p>Klik tombol <strong>&quot;SCAN&quot;</strong></p>
+</li>
+</ol>
+<h4>Langkah 4: Konfirmasi Scan</h4>
+<p>Jika scan berhasil:</p>
+<pre><code>┌─────────────────────────────────┐
+│  ✅ SCAN BERHASIL               │
+├─────────────────────────────────┤
+│                                 │
+│  QR: Block A-101                │
+│  Penanggung Jawab:              │
+│  Bpk. Ahmad                     │
+│                                 │
+│  Tipe: MASUK                    │
+│  Waktu: 13-03-2026, 18:30       │
+│                                 │
+│  [OK]                           │
+└─────────────────────────────────┘
+</code></pre>
+<p>Klik <strong>&quot;OK&quot;</strong> untuk kembali ke scanner</p>
+<h4>Langkah 5: Scan Berikutnya</h4>
+<p>Anda bisa langsung scan QR berikutnya tanpa perlu kembali ke menu utama.</p>
+<h3>Jika Scan Gagal:</h3>
+<pre><code>┌─────────────────────────────────┐
+│  ❌ SCAN GAGAL                  │
+├─────────────────────────────────┤
+│                                 │
+│  QR Code tidak valid atau       │
+│  tidak aktif                    │
+│                                 │
+│  [OK]                           │
+└─────────────────────────────────┘
+</code></pre>
+<p><strong>Penyebab gagal:</strong></p>
+<ul>
+<li>QR code tidak terdaftar</li>
+<li>QR code sudah tidak aktif (melewati masa berlaku)</li>
+<li>QR code salah/korupsi</li>
+</ul>
+<h3>Tips Scan yang Baik:</h3>
+<p>💡 <strong>Pencahayaan Cukup</strong> - Pastikan area terang
+💡 <strong>Fokus Kamera</strong> - Tunggu sampai QR jelas
+💡 <strong>Jarak Tepat</strong> - Jangan terlalu dekat atau jauh
+💡 <strong>Stabilkan Tangan</strong> - Hindari goyangan saat scan</p>
+<hr>
+<h2>6. RIWAYAT SCAN</h2>
+<p>Riwayat scan menampilkan semua scan yang sudah Anda lakukan.</p>
+<h3>Membuka Riwayat:</h3>
+<ol>
+<li>Klik tab <strong>&quot;Log&quot;</strong> di bagian bawah</li>
+<li>Daftar semua scan akan muncul</li>
+</ol>
+<h3>Informasi yang Ditampilkan:</h3>
+<pre><code>┌────────────────────────────────────┐
+│  📋 RIWAYAT SCAN                   │
+├────────────────────────────────────┤
+│                                    │
+│  13 Maret 2026, 18:30              │
+│  Block A-101                       │
+│  Penanggung Jawab: Bpk. Ahmad      │
+│  Petugas: Anda                     │
+│  Pos: Pos 1 Utara                  │
+│  Tipe: MASUK ✅                    │
+│                                    │
+│  13 Maret 2026, 17:45              │
+│  Block B-205                       │
+│  Penanggung Jawab: Ibu Siti        │
+│  Petugas: Anda                     │
+│  Pos: Pos 1 Utara                  │
+│  Tipe: KELUAR 🔼                   │
+│                                    │
+└────────────────────────────────────┘
+</code></pre>
+<h3>Ikon Status:</h3>
+<table>
+<thead>
+<tr>
+<th>Ikon</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>✅ <strong>Synced</strong></td>
+<td>Scan sudah disimpan ke server</td>
+</tr>
+<tr>
+<td>⏳ <strong>Pending</strong></td>
+<td>Scan belum disinkronkan (offline)</td>
+</tr>
+</tbody></table>
+<h3>Refresh Data:</h3>
+<p>Tarik layar ke bawah (pull to refresh) untuk memuat data terbaru.</p>
+<h3>Hapus Riwayat Scan:</h3>
+<p>⚠️ <strong>Hanya scan yang sudah synced</strong> yang bisa dihapus.</p>
+<ol>
+<li>Tahan tekan (long press) pada scan yang ingin dihapus</li>
+<li>Klik tombol <strong>&quot;Hapus&quot;</strong> (🗑️) yang muncul</li>
+<li>Konfirmasi penghapusan</li>
+</ol>
+<hr>
+<h2>7. PENGUMUMAN</h2>
+<p>Menu ini menampilkan pengumuman penting dari admin.</p>
+<h3>Membuka Pengumuman:</h3>
+<ol>
+<li>Klik tab <strong>&quot;Annou&quot;</strong> di bagian bawah</li>
+<li>Daftar pengumuman akan muncul</li>
+</ol>
+<h3>Tingkat Prioritas:</h3>
+<table>
+<thead>
+<tr>
+<th>Warna</th>
+<th>Prioritas</th>
+<th>Contoh</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🟢 <strong>Hijau</strong></td>
+<td>Normal</td>
+<td>Info jadwal jaga</td>
+</tr>
+<tr>
+<td>🟡 <strong>Kuning</strong></td>
+<td>Penting</td>
+<td>Perubahan jadwal</td>
+</tr>
+<tr>
+<td>🔴 <strong>Merah</strong></td>
+<td>Urgent</td>
+<td>Darurat/Kondisi genting</td>
+</tr>
+</tbody></table>
+<h3>Contoh Pengumuman:</h3>
+<pre><code>┌─────────────────────────────────────┐
+│  📢 PENGUMUMAN PENTING              │
+├─────────────────────────────────────┤
+│                                     │
+│  Jam Malam Dimulai                  │
+│  Pukul 22:00 WIB                    │
+│                                     │
+│  Diberitahukan kepada seluruh       │
+│  petugas jaga bahwa jam malam       │
+│  dimulai pukul 22:00 WIB            │
+│                                     │
+│  Ditetapkan: 13 Maret 2026          │
+└─────────────────────────────────────┘
+</code></pre>
+<h3>Tanda Sudah Dibaca:</h3>
+<p>Pengumuman yang sudah dibaca akan memiliki tanda ✅</p>
+<h3>Refresh Pengumuman:</h3>
+<p>Tarik layar ke bawah untuk mendapatkan pengumuman terbaru.</p>
+<hr>
+<h2>8. PENGATURAN</h2>
+<p>Menu pengaturan untuk mengubah profil dan konfigurasi.</p>
+<h3>Membuka Pengaturan:</h3>
+<ol>
+<li>Klik icon <strong>Settings</strong> (⚙️) di pojok kanan atas halaman Home</li>
+</ol>
+<h3>Opsi Pengaturan:</h3>
+<h4>1. Pilih Petugas</h4>
+<ul>
+<li>Ganti petugas yang sedang bertugas</li>
+<li>Pilih dari daftar petugas yang tersedia</li>
+</ul>
+<h4>2. Pilih Pos</h4>
+<ul>
+<li>Ganti pos tempat bertugas</li>
+<li>Pilih dari daftar pos yang tersedia</li>
+</ul>
+<h4>3. Sync Data</h4>
+<ul>
+<li>Sinkronkan data master (petugas, pos, QR, pengumuman)</li>
+<li>Lakukan secara berkala untuk data terbaru</li>
+</ul>
+<h4>4. Info Aplikasi</h4>
+<ul>
+<li>Lihat versi aplikasi</li>
+<li>Informasi developer</li>
+</ul>
+<h4>5. Logout</h4>
+<ul>
+<li>Keluar dari aplikasi</li>
+<li>Perlu login ulang dengan PIN</li>
+</ul>
+<hr>
+<h2>9. OFFLINE MODE</h2>
+<p>Aplikasi tetap bisa digunakan TANPA internet.</p>
+<h3>Cara Kerja Offline:</h3>
+<ol>
+<li><p><strong>Tanpa Internet:</strong></p>
+<ul>
+<li>Scan akan tetap berjalan</li>
+<li>Data disimpan di HP (local database)</li>
+<li>Status: ⏳ <strong>Pending</strong></li>
+</ul>
+</li>
+<li><p><strong>Dengan Internet:</strong></p>
+<ul>
+<li>Aplikasi otomatis sinkronisasi</li>
+<li>Data pending dikirim ke server</li>
+<li>Status: ✅ <strong>Synced</strong></li>
+</ul>
+</li>
+</ol>
+<h3>Sync Otomatis:</h3>
+<p>Aplikasi akan sinkronisasi otomatis saat:</p>
+<ul>
+<li>✅ HP terhubung ke internet</li>
+<li>✅ HP sedang di-charge</li>
+<li>✅ Setiap 15 menit</li>
+</ul>
+<h3>Sync Manual:</h3>
+<p>Jika ingin sync segera:</p>
+<ol>
+<li>Buka menu <strong>&quot;Settings&quot;</strong></li>
+<li>Klik <strong>&quot;Sync Data&quot;</strong></li>
+<li>Tunggu proses sync selesai</li>
+</ol>
+<h3>Cek Status Sync:</h3>
+<ul>
+<li>Buka menu <strong>&quot;Log&quot;</strong></li>
+<li>Lihat icon status:<ul>
+<li>✅ = Sudah synced</li>
+<li>⏳ = Belum synced (offline)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>10. TROUBLESHOOTING</h2>
+<h3>Masalah 1: Kamera Tidak Bisa Dibuka</h3>
+<p><strong>Penyebab:</strong> Izin kamera tidak diberikan</p>
+<p><strong>Solusi:</strong></p>
+<ol>
+<li>Buka <strong>Settings</strong> HP</li>
+<li>Cari <strong>&quot;Apps&quot;</strong> → <strong>&quot;Pengamanan&quot;</strong></li>
+<li>Klik <strong>&quot;Permissions&quot;</strong></li>
+<li>Aktifkan <strong>&quot;Camera&quot;</strong></li>
+</ol>
+<hr>
+<h3>Masalah 2: QR Code Tidak Terdeteksi</h3>
+<p><strong>Penyebab:</strong> Karena beberapa hal:</p>
+<ul>
+<li>QR code terlalu kecil/besar</li>
+<li>Pencahayaan kurang</li>
+<li>QR code rusak</li>
+</ul>
+<p><strong>Solusi:</strong></p>
+<ul>
+<li>Dekatkan/jauhkan kamera dari QR</li>
+<li>Pindah ke tempat yang lebih terang</li>
+<li>Pastikan QR code tidak rusak</li>
+</ul>
+<hr>
+<h3>Masalah 3: Scan Gagal Terus</h3>
+<p><strong>Penyebab:</strong> QR code tidak valid atau tidak aktif</p>
+<p><strong>Solusi:</strong></p>
+<ul>
+<li>Cek apakah QR sudah terdaftar di sistem</li>
+<li>Hubungi admin untuk validasi QR</li>
+<li>Pastikan masa berlaku QR masih aktif</li>
+</ul>
+<hr>
+<h3>Masalah 4: Data Tidak Sinkron</h3>
+<p><strong>Penyebab:</strong> Tidak ada koneksi internet</p>
+<p><strong>Solusi:</strong></p>
+<ol>
+<li>Cek koneksi internet</li>
+<li>Buka <strong>Settings</strong> → <strong>Sync Data</strong></li>
+<li>Tunggu hingga selesai</li>
+</ol>
+<hr>
+<h3>Masalah 5: Lupa PIN</h3>
+<p><strong>Solusi:</strong></p>
+<ul>
+<li>Hubungi admin sistem</li>
+<li>PIN sama untuk semua petugas (global)</li>
+</ul>
+<hr>
+<h3>Masalah 6: Aplikasi Force Close</h3>
+<p><strong>Solusi:</strong></p>
+<ol>
+<li>Tutup aplikasi sepenuhnya</li>
+<li>Buka kembali aplikasi</li>
+<li>Jika masih berlanjut, restart HP</li>
+</ol>
+<hr>
+<h3>Masalah 7: Petugas/Pos Tidak Muncul</h3>
+<p><strong>Penyebab:</strong> Data belum disinkronkan</p>
+<p><strong>Solusi:</strong></p>
+<ol>
+<li>Buka <strong>Settings</strong></li>
+<li>Klik <strong>&quot;Sync Data&quot;</strong></li>
+<li>Tunggu hingga selesai</li>
+<li>Coba lagi memilih petugas/pos</li>
+</ol>
+<hr>
+<h2>11. TIPS PENGGUNAAN</h2>
+<h3>💡 Saat Bertugas:</h3>
+<ol>
+<li><strong>Selalu cek petugas dan pos</strong> sebelum mulai bertugas</li>
+<li><strong>Scan dengan hati-hati</strong> - pastikan tipe scan benar</li>
+<li><strong>Cek riwayat</strong> secara berkala untuk memastikan scan tersimpan</li>
+<li><strong>Sync data</strong> setiap berganti shift untuk data terbaru</li>
+</ol>
+<h3>💡 Menjaga Baterai:</h3>
+<ol>
+<li><strong>Matikan GPS</strong> jika tidak diperlukan</li>
+<li><strong>Turunkan kecerahan layar</strong> untuk hemat baterai</li>
+<li><strong>Charge saat ada kesempatan</strong> terutama saat istirahat</li>
+</ol>
+<h3>💡 Jika Ada Masalah:</h3>
+<ol>
+<li><strong>Catat error</strong> yang muncul</li>
+<li><strong>Screenshot pesan error</strong> jika ada</li>
+<li><strong>Laporkan ke admin</strong> segera</li>
+<li><strong>Jangan hapus aplikasi</strong> sebelum konsultasi</li>
+</ol>
+<hr>
+<h2>12. ALUR KERJA PETUGAS</h2>
+<h3>Sebelum Bertugas:</h3>
+<pre><code>1. Buka aplikasi
+2. Login dengan PIN
+3. Pilih petugas (nama Anda)
+4. Pilih pos tempat bertugas
+5. Klik &quot;Simpan&quot;
+6. Klik &quot;Sync Data&quot; untuk data terbaru
+</code></pre>
+<h3>Saat Bertugas:</h3>
+<pre><code>1. Ada warga/tamu datang
+2. Minta tunjukkan QR code
+3. Buka aplikasi → tab &quot;Scan&quot;
+4. Arahkan kamera ke QR code
+5. Tunggu QR terdeteksi
+6. Pilih tipe scan (MASUK/KELUAR)
+7. Klik &quot;SCAN&quot;
+8. Tunggu notifikasi sukses
+</code></pre>
+<h3>Saat Berganti Shift:</h3>
+<pre><code>1. Buka menu &quot;Log&quot;
+2. Cek semua scan sudah synced (✅)
+3. Jika ada pending (⏳), hubungkan ke internet
+4. Buka &quot;Settings&quot; → &quot;Sync Data&quot;
+5. Logout dan serahkan ke petugas berikutnya
+</code></pre>
+<hr>
+<h2>13. KONTAK SUPPORT</h2>
+<p>Jika mengalami masalah atau ada pertanyaan:</p>
+<p>📱 <strong>Ketua RT:</strong> [Nomor HP]
+📧 <strong>Email Admin:</strong> <a href="mailto:admin@blokf.hadirapp.com">admin@blokf.hadirapp.com</a>
+🌐 <strong>Website:</strong> <a href="https://blokf.hadirapp.com">https://blokf.hadirapp.com</a></p>
+<hr>
+<h2>14. GLOSARIUM</h2>
+<table>
+<thead>
+<tr>
+<th>Istilah</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>QR Code</strong></td>
+<td>Kode unik berupa kotak-kotak hitam-putih</td>
+</tr>
+<tr>
+<td><strong>Scan</strong></td>
+<td>Memindai QR code dengan kamera</td>
+</tr>
+<tr>
+<td><strong>Masuk</strong></td>
+<td>Tamu/warga masuk ke lingkungan</td>
+</tr>
+<tr>
+<td><strong>Keluar</strong></td>
+<td>Tamu/warga keluar dari lingkungan</td>
+</tr>
+<tr>
+<td><strong>Sync</strong></td>
+<td>Sinkronisasi data ke server</td>
+</tr>
+<tr>
+<td><strong>Offline Mode</strong></td>
+<td>Menggunakan aplikasi tanpa internet</td>
+</tr>
+<tr>
+<td><strong>Pending</strong></td>
+<td>Data belum dikirim ke server</td>
+</tr>
+<tr>
+<td><strong>Synced</strong></td>
+<td>Data sudah dikirim ke server</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>15. VIDEO TUTORIAL</h2>
+<h3>Video 1: Cara Scan QR Code</h3>
+<p>[Link Video]</p>
+<h3>Video 2: Cara Ganti Petugas/Pos</h3>
+<p>[Link Video]</p>
+<h3>Video 3: Cara Sinkronisasi Data</h3>
+<p>[Link Video]</p>
+<hr>
+<p><strong>Selamat bertugas!</strong> 👮</p>
+<p><em>Terima kasih atas kerja keras Anda menjaga keamanan lingkungan kita.</em></p>
+<hr>
+<p><strong>Dokumentasi ini akan terus diupdate seiring dengan perkembangan aplikasi.</strong></p>
+
+        </div>
+    </div>
+</body>
+</html>

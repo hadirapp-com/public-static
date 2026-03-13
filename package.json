@@ -4,7 +4,11 @@
   "description": "Auto-generate index.html from repository files",
   "scripts": {
     "update": "node update-index.js",
-    "update:watch": "nodemon --watch . --watch apk --watch images --ignore index.html --exec 'node update-index.js'"
+    "update:watch": "nodemon --watch . --watch apk --watch images --watch docs --ignore index.html --exec 'node update-index.js'",
+    "update:docs": "node update-docs.js"
+  },
+  "dependencies": {
+    "marked": "^12.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.0"

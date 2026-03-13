@@ -24,6 +24,36 @@ const CONFIG = {
   }
 };
 
+// Get documentation apps from docs folder
+function getDocumentationApps() {
+  const docsDir = path.join(process.cwd(), 'docs');
+  if (!fs.existsSync(docsDir)) return [];
+
+  const apps = [];
+  const items = fs.readdirSync(docsDir);
+
+  for (const item of items) {
+    const appDir = path.join(docsDir, item);
+    const stat = fs.statSync(appDir);
+
+    if (stat.isDirectory()) {
+      // Check if there's an index.html in the app folder
+      const indexPath = path.join(appDir, 'index.html');
+      if (fs.existsSync(indexPath)) {
+        // Count markdown files
+        const mdFiles = fs.readdirSync(appDir).filter(f => f.endsWith('.md'));
+        apps.push({
+          name: item,
+          path: `./docs/${item}/index.html`,
+          docCount: mdFiles.length
+        });
+      }
+    }
+  }
+
+  return apps;
+}
+
 function getAllFiles(dir, fileList = []) {
   const files = fs.readdirSync(dir);
 
@@ -61,7 +91,7 @@ function getRelativePath(filePath) {
 }
 
 function generateIndexHTML() {
-  const files = getAllFiles(process.cwd());
+  const files = getAllFiles(process.cwd()).filter(f => !f.startsWith(path.join(process.cwd(), 'docs')));
   const categorized = {};
 
   // Initialize categories
@@ -83,9 +113,35 @@ function generateIndexHTML() {
     });
   }
 
+  // Get documentation apps
+  const docApps = getDocumentationApps();
+
   // Generate HTML sections
   let sectionsHTML = '';
 
+  // Documentation section (always first if exists)
+  if (docApps.length > 0) {
+    sectionsHTML += `            <section class="section">
+                <h2>Documentation</h2>
+                <ul class="file-list">
+`;
+    for (const app of docApps) {
+      sectionsHTML += `                    <li class="file-item">
+                        <span class="file-icon">📚</span>
+                        <div class="file-info">
+                            <div class="file-name"><a href="${app.path}" class="file-link">${app.name}</a></div>
+                            <div class="file-type">${app.docCount} documentation page(s)</div>
+                        </div>
+                    </li>
+`;
+    }
+
+    sectionsHTML += `                </ul>
+            </section>
+`;
+  }
+
+  // Other file categories
   for (const [category, fileList] of Object.entries(categorized)) {
     if (fileList.length === 0) continue;
 
@@ -216,7 +272,7 @@ ${sectionsHTML}
 function gitCommit(message) {
   try {
     console.log('📝 Adding files to git...');
-    execSync('git add index.html', { stdio: 'inherit' });
+    execSync('git add -A', { stdio: 'inherit' });
 
     console.log('💾 Creating commit...');
     execSync(`git commit -m "${message}"`, {
@@ -235,6 +291,10 @@ function gitCommit(message) {
 }
 
 function main() {
+  console.log('📚 Processing documentation...');
+  const { main: processDocs } = require('./update-docs.js');
+  processDocs();
+
   console.log('🔍 Scanning files...');
 
   const html = generateIndexHTML();
@@ -243,7 +303,7 @@ function main() {
   console.log('✅ index.html updated!');
 
   // Commit changes
-  gitCommit('update index.html - auto-generated');
+  gitCommit('update index and documentation - auto-generated');
 
   console.log('\n🎉 Done!');
 }
