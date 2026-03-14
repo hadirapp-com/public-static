@@ -43,7 +43,7 @@ Aplikasi ini dirancang untuk memudahkan pengelolaan keamanan Lebaran di lingkung
 ### Akses Aplikasi
 
 🌐 **URL Dashboard Admin:**
-https://blokf.hadirapp.com
+https://rt24.hadirapp.com
 
 ---
 
@@ -51,7 +51,7 @@ https://blokf.hadirapp.com
 
 ### Langkah-langkah Login:
 
-1. Buka browser dan kunjungi: **https://blokf.hadirapp.com**
+1. Buka browser dan kunjungi: **https://rt24.hadirapp.com**
 
 2. Halaman login akan muncul
 
@@ -481,9 +481,9 @@ Menu ini untuk mengatur pengaturan aplikasi.
 
 Jika mengalami masalah atau memiliki pertanyaan:
 
-📧 **Email:** admin@blokf.hadirapp.com
+📧 **Email:** admin@rt24.hadirapp.com
 📱 **WhatsApp:** [Nomor Admin]
-🌐 **Website:** https://blokf.hadirapp.com
+🌐 **Website:** https://rt24.hadirapp.com
 
 ---
 

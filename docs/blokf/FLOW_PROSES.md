@@ -22,7 +22,7 @@
 
 ```mermaid
 flowchart TD
-    A[Buka Browser] --> B[Masukkan URL: blokf.hadirapp.com]
+    A[Buka Browser] --> B[Masukkan URL: rt24.hadirapp.com]
     B --> C[Halaman Login]
     C --> D{Masukkan Kredensial}
     D -->|Username & Password| E[Login Button]
@@ -1034,7 +1034,7 @@ Petugas          Mobile App         Server
   □ Database is seeded
 
 □ FIRST LOGIN
-  □ Access blokf.hadirapp.com
+  □ Access rt24.hadirapp.com
   □ Login with superadmin/admin123
   □ Change password (recommended)
 
@@ -1386,5 +1386,5 @@ Dokumentasi flow proses ini memberikan panduan lengkap untuk:
 **Dokumentasi ini akan terus diupdate seiring dengan perkembangan aplikasi.**
 
 Untuk pertanyaan atau klarifikasi, hubungi:
-- 📧 Email: admin@blokf.hadirapp.com
-- 🌐 Website: https://blokf.hadirapp.com
+- 📧 Email: admin@rt24.hadirapp.com
+- 🌐 Website: https://rt24.hadirapp.com

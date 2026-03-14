@@ -543,8 +543,8 @@ Jika ingin sync segera:
 Jika mengalami masalah atau ada pertanyaan:
 
 📱 **Ketua RT:** [Nomor HP]
-📧 **Email Admin:** admin@blokf.hadirapp.com
-🌐 **Website:** https://blokf.hadirapp.com
+📧 **Email Admin:** admin@rt24.hadirapp.com
+🌐 **Website:** https://rt24.hadirapp.com
 
 ---
 
